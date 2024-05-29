@@ -1,9 +1,9 @@
-package com.shutterfly.interview.product.service;
+package com.shutterfly.interview.book.service;
 
-import com.shutterfly.interview.product.dto.BookDTO;
-import com.shutterfly.interview.product.model.Book;
-import com.shutterfly.interview.product.respository.BookRepository;
-import com.shutterfly.interview.product.service.mapper.BookMapper;
+import com.shutterfly.interview.book.dto.BookDTO;
+import com.shutterfly.interview.book.model.Book;
+import com.shutterfly.interview.book.respository.BookRepository;
+import com.shutterfly.interview.book.service.mapper.BookMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
@@ -29,7 +29,7 @@ public class BookService {
     public BookDTO updateBook(BookDTO book) {
         if (book == null || book.getId() == null){
             throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "entity not found"
+                    HttpStatus.BAD_REQUEST, "Id must be provided"
             );
         }
         return mapper.toDTO(this.repository.save(mapper.fromDTO(book)));
@@ -38,7 +38,7 @@ public class BookService {
     public void deleteBook(Long id) {
         if (id == null){
             throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST, "entity not found"
+                    HttpStatus.BAD_REQUEST, "Id must be provided"
             );
         }
 

@@ -1,7 +1,7 @@
-package com.shutterfly.interview.product.controller;
+package com.shutterfly.interview.book.controller;
 
-import com.shutterfly.interview.product.dto.BookDTO;
-import com.shutterfly.interview.product.service.BookService;
+import com.shutterfly.interview.book.dto.BookDTO;
+import com.shutterfly.interview.book.service.BookService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

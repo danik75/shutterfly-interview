@@ -1,24 +1,20 @@
-package com.shutterfly.interview.product.model;
+package com.shutterfly.interview.book.dto;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "book",
-        indexes = {@Index(name = "idx_isbn", columnList="isbn")})
-public class Book {
+public class BookDTO {
 
-    @Id
-    @SequenceGenerator(
-            name = "book_id_sequence",
-            sequenceName = "book_id_sequence"
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "book_id_sequence"
-    )
+    public BookDTO(Long id, String isbn, String title, String authorName, String publisherName, LocalDateTime publicationDate) {
+        this.id = id;
+        this.isbn = isbn;
+        this.title = title;
+        this.authorName = authorName;
+        this.publisherName = publisherName;
+        this.publicationDate = publicationDate;
+    }
+
     private Long id;
 
     @NotBlank
@@ -33,21 +29,6 @@ public class Book {
 
     private LocalDateTime publicationDate;
 
-    public Book() {
-    }
-
-    public Book(Long id) {
-        this.id = id;
-    }
-
-    public Book(Long id, String isbn, String title, String authorName, String publisherName, LocalDateTime publicationDate) {
-        this.id = id;
-        this.isbn = isbn;
-        this.title = title;
-        this.authorName = authorName;
-        this.publisherName = publisherName;
-        this.publicationDate = publicationDate;
-    }
 
     public Long getId() {
         return id;

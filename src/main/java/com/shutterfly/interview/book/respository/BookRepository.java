@@ -1,6 +1,6 @@
-package com.shutterfly.interview.product.respository;
+package com.shutterfly.interview.book.respository;
 
-import com.shutterfly.interview.product.model.Book;
+import com.shutterfly.interview.book.model.Book;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

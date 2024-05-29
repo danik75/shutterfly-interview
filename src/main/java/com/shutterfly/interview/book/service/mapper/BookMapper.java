@@ -1,8 +1,8 @@
-package com.shutterfly.interview.product.service.mapper;
+package com.shutterfly.interview.book.service.mapper;
 
 import com.shutterfly.interview.mapper.Mapper;
-import com.shutterfly.interview.product.dto.BookDTO;
-import com.shutterfly.interview.product.model.Book;
+import com.shutterfly.interview.book.dto.BookDTO;
+import com.shutterfly.interview.book.model.Book;
 import org.springframework.stereotype.Component;
 
 @Component
