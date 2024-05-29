@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM bellsoft/liberica-openjdk-alpine-musl:17
 VOLUME /tmp
 ARG JAR_FILE
 COPY ${JAR_FILE} app.jar
