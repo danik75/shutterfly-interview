@@ -19,14 +19,14 @@ public class BookController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PutMapping("")
-    public void create(@Valid @RequestBody BookDTO product){
-        this.bookService.addBook(product);
+    public BookDTO create(@Valid @RequestBody BookDTO product){
+        return this.bookService.addBook(product);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("")
-    public void update(@Valid @RequestBody BookDTO product){
-        this.bookService.updateBook(product);
+    public BookDTO update(@Valid @RequestBody BookDTO product){
+        return this.bookService.updateBook(product);
     }
 
 
@@ -38,8 +38,13 @@ public class BookController {
 
 
     @GetMapping("")
-    public List<BookDTO> findAll(){
-        return this.bookService.findAllBooks();
+    public List<BookDTO> findAll(@RequestParam(required = false) String author){
+        return this.bookService.findAllBooks(author);
+    }
+
+    @GetMapping("/{isbn}")
+    public BookDTO getBookByIsbn(@PathVariable String isbn){
+        return this.bookService.getByIsbn(isbn);
     }
 
 }

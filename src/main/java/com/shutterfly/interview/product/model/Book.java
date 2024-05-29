@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "book",
+        indexes = {@Index(name = "idx_isbn", columnList="isbn")})
 public class Book {
 
     @Id
