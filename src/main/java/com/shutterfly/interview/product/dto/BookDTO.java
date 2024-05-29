@@ -2,21 +2,33 @@ package com.shutterfly.interview.product.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
+import java.time.LocalDateTime;
+
 public class BookDTO {
+
+    public BookDTO(Long id, String isbn, String title, String authorName, String publisherName, LocalDateTime publicationDate) {
+        this.id = id;
+        this.isbn = isbn;
+        this.title = title;
+        this.authorName = authorName;
+        this.publisherName = publisherName;
+        this.publicationDate = publicationDate;
+    }
 
     private Long id;
 
     @NotBlank
-    private String category;
+    private String isbn;
 
     @NotBlank
-    private String brand;
+    private String title;
 
-    public BookDTO(Long id, String category, String brand) {
-        this.id = id;
-        this.category = category;
-        this.brand = brand;
-    }
+    private String authorName;
+
+    private String publisherName;
+
+    private LocalDateTime publicationDate;
+
 
     public Long getId() {
         return id;
@@ -26,21 +38,43 @@ public class BookDTO {
         this.id = id;
     }
 
-    public String getCategory() {
-        return category;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getTitle() {
+        return title;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
+    public String getAuthorName() {
+        return authorName;
+    }
 
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getPublisherName() {
+        return publisherName;
+    }
+
+    public void setPublisherName(String publisherName) {
+        this.publisherName = publisherName;
+    }
+
+    public LocalDateTime getPublicationDate() {
+        return publicationDate;
+    }
+
+    public void setPublicationDate(LocalDateTime publicationDate) {
+        this.publicationDate = publicationDate;
+    }
 }

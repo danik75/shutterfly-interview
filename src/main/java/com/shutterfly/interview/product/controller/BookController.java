@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/product")
+@RequestMapping("/api/book")
 public class BookController {
     private final BookService bookService;
 
@@ -18,14 +18,28 @@ public class BookController {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("")
+    @PutMapping("")
     public void create(@Valid @RequestBody BookDTO product){
-        this.bookService.addProduct(product);
+        this.bookService.addBook(product);
     }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PostMapping("")
+    public void update(@Valid @RequestBody BookDTO product){
+        this.bookService.updateBook(product);
+    }
+
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        this.bookService.deleteBook(id);
+    }
+
 
     @GetMapping("")
     public List<BookDTO> findAll(){
-        return null;
+        return this.bookService.findAllBooks();
     }
 
 }
