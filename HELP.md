@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.niq.interview.niq-interview' is invalid and this project uses 'com.niq.interview.niq_interview' instead.
+* The original package name 'com.shutterfly.interview.shutterfly-interview' is invalid and this project uses 'com.shutterfly.interview.shutterfly_interview' instead.
 
 # Getting Started
 

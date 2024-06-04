@@ -11,7 +11,7 @@
 	<groupId>com.shutterfly.interview</groupId>
 	<artifactId>shutterfly-interview</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>niq-interview</name>
+	<name>shutterfly-interview</name>
 	<description>Spring Boot project for Shutterfly HW assignment</description>
 	<properties>
 		<java.version>17</java.version>
