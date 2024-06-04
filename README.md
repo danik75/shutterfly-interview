@@ -12,8 +12,8 @@ verify image was created by running:
 run
 **_docker run -p 8080:8080 book-api_**
 
-# Start postgres and application using docker-compose (requires docker installation on the machine)
-To start postgres db and application, please use the docker compose in the project rood directory.
+# Start postgres and application using docker-compose
+To start postgres db and application, please use the docker compose (requires docker installation on the machine) in the project rood directory.
 Via commandline, go to the root directory subdirectory and run command **_docker-compose up_**
 
 # Start the Spring boot application - as stand-alone application
