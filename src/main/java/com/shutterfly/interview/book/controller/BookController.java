@@ -23,7 +23,7 @@ public class BookController {
         return this.bookService.addBook(product);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+
     @PostMapping("")
     public BookDTO update(@Valid @RequestBody BookDTO product){
         return this.bookService.updateBook(product);

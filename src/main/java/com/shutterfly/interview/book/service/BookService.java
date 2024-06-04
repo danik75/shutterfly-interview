@@ -26,13 +26,14 @@ public class BookService {
         return mapper.toDTO(this.repository.save(mapper.fromDTO(book)));
     }
 
-    public BookDTO updateBook(BookDTO book) {
-        if (book == null || book.getId() == null){
+    public BookDTO updateBook(BookDTO bookDTO) {
+        if (bookDTO == null || bookDTO.getId() == null){
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, "Id must be provided"
             );
         }
-        return mapper.toDTO(this.repository.save(mapper.fromDTO(book)));
+        Book book = this.repository.save(mapper.fromDTO(bookDTO));
+        return mapper.toDTO(book);
     }
 
     public void deleteBook(Long id) {
