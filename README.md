@@ -25,12 +25,18 @@ Please change directory to the root project dir and run the maven script:
 2. Create docker image as specified in the _**Containerization**_
 3. Start application and DB as specified in - **_Start postgres and application using docker-compose_**
 
-
-
-
 # Testing
 To simplify, there is a postman collection inside the repo located at:
 **_/shutterfly-interview/postman_**
+
+# Start application without docker
+1. Start the postgres DB by running _**docker-compose -f docker-compose-db.yml up**_
+2. Edit src/main/resources/application.properties and change property **spring.datasource.url** to jdbc:postgresql://**localhost**:5432/postgres
+3. Start the application by running **_./mvnw spring-boot:run_**
+
+
+
+
 
 
 
