@@ -8,3 +8,9 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: shutterfly
+  app:
+    image: book-api:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
