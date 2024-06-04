@@ -20,6 +20,9 @@ Via commandline, go to the root directory subdirectory and run command **_docker
 Please change directory to the root project dir and run the maven script:
 **_./mvnw spring-boot:run_**  
 
+# Start using script
+1. Run the script [build_and_start.sh](build_and_start.sh) to build project, build docker, run docker-compose all together.
+
 # Full installation sequence
 1. Build project as specified in **_Build project_** section
 2. Create docker image as specified in the _**Containerization**_
@@ -33,6 +36,7 @@ To simplify, there is a postman collection inside the repo located at:
 1. Start the postgres DB by running _**docker-compose -f docker-compose-db.yml up**_
 2. Edit src/main/resources/application.properties and change property **spring.datasource.url** to jdbc:postgresql://**localhost**:5432/postgres
 3. Start the application by running **_./mvnw spring-boot:run_**
+
 
 
 

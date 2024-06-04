@@ -6,8 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "book",
-        indexes = {@Index(name = "idx_isbn", columnList="isbn")})
+@Table(name = "book")
 public class Book {
 
     @Id
@@ -22,6 +21,7 @@ public class Book {
     private Long id;
 
     @NotBlank
+    @Column(name = "isbn", nullable = false, unique = true)
     private String isbn;
 
     @NotBlank
